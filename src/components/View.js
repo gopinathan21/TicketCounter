@@ -26,6 +26,10 @@ const View = (props) => {
     console.log(ticketData);
   };
 
+  const handleClose =()=>{
+    setEdit(null);
+  }
+
   const handleEdit = (index)=>{
     setEdit(index)
   };
@@ -50,7 +54,7 @@ const View = (props) => {
           <button onClick={() => handleIncrease(index)}> + </button>
           <button onClick={() => handleDelete(index)}> delete </button>
           <button onClick={()=> handleEdit(index)}>Edit Heading</button>
-          {edit && index === edit && <input onKeyPress={handleEditValue}></input>}
+          { (edit !== null && edit === index )?  (<><input onKeyPress={handleEditValue}></input> <button onClick={handleClose}>Close</button></>) : <></>}
         </div>
       ))}
     </div>
