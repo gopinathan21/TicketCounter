@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import View from "./components/View";
+import './App.css'
 
 function App() {
   const [heading, setHeading] = useState("");
   const [ticketData, setTicketData] = useState([]);
   const [currentDate, setCurrentDate] = useState(""); 
+  
 
   useEffect(() => {
     const storedData = localStorage.getItem("ticketObject");
@@ -31,7 +33,7 @@ function App() {
   };
 
   const handleInput = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && e.target.value !== "") {
       const newTicket = { heading, count: 0 };
       const newTicketData = [...ticketData, newTicket];
       setTicketData(newTicketData);

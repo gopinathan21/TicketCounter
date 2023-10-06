@@ -42,7 +42,7 @@ const View = (props) => {
         setEdit(null);
     }
   }
-  
+ 
 
   return (
     <div>
