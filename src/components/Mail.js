@@ -7,7 +7,7 @@ function Mail(props) {
 
   const subject = `${currentDate} Report`;
   const text = "I am from react";
-  const url = "http://localhost:8888/.netlify/functions/api";
+  const url = "https://gopinodeserver.netlify.app/.netlify/functions/api";
 
   const handleMailInput = (e) => {
     const newMail = `${e.target.value}`;
